@@ -1,0 +1,41 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT License"
+issueTrackerURL="https://github.com/Mrthomas20121/ForegoingTweaker/issues"
+
+[[mods]]
+modId="foregoing_tweaker"
+version="${file.jarVersion}"
+displayName="Foregoing Tweaker"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/foregoing_tweaker"
+#logoFile="tinkers_reforged_logo.png"
+authors="Mrthomas20121"
+description='''
+Add Crafttweaker support to Industrial Foregoing
+'''
+
+[[dependencies.foregoing_tweaker]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.foregoing_tweaker]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.foregoing_tweaker]]
+    modId="industrialforegoing"
+    mandatory=true
+    versionRange="[3.2,]"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.foregoing_tweaker]]
+	modId = "crafttweaker"
+	mandatory = true
+	versionRange = "[7.1,)"
+	ordering = "NONE"
+	side = "BOTH"
