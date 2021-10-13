@@ -1,0 +1,1 @@
+<recipetype:industrialforegoing:laser_drill_fluid>.addRecipe(<fluid:water>*1000, 12, 0, 255, 1);

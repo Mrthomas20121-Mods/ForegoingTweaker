@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "Mods": {
+      "ForegoingTweaker": {
+        "DissolutionChamberRecipe": "mods/ForegoingTweaker/DissolutionChamber.md",
+        "Api": {
+          "LaserDrillRarityBuilder": "mods/ForegoingTweaker/Api/LaserDrillRarityBuilder.md"
+        },
+        "LaserDrill": {
+          "LaserDrillFluidRecipe": "mods/ForegoingTweaker/LaserDrill/Fluid.md",
+          "LaserDrillRecipe": "mods/ForegoingTweaker/LaserDrill/Ores.md"
+        },
+        "MaterialStoneworkFactory": {
+          "Crusher": "mods/ForegoingTweaker/MaterialStoneworkFactory/Crusher.md",
+          "DissolutionChamberRecipe": "mods/ForegoingTweaker/MaterialStoneworkFactory/StoneworkGenerate.md"
+        }
+      }
+    }
+  }
+}

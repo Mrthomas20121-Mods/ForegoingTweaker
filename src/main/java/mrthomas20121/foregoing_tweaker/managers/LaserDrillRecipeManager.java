@@ -8,6 +8,7 @@ import com.blamejared.crafttweaker.impl.actions.recipes.ActionAddRecipe;
 import com.blamejared.crafttweaker_annotations.annotations.Document;
 import com.buuz135.industrial.recipe.LaserDrillOreRecipe;
 import com.buuz135.industrial.recipe.LaserDrillRarity;
+import mrthomas20121.foregoing_tweaker.laser_drill.LaserDrillRarityBuilder;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.RegistryKey;
 import org.openzen.zencode.java.ZenCodeType;
@@ -18,8 +19,8 @@ import org.openzen.zencode.java.ZenCodeType;
 public class LaserDrillRecipeManager implements IRecipeManager {
 
     @ZenCodeType.Method
-    public void addRecipe(String name, IItemStack output, int color, int depth_min, int depth_max, int weight) {
-        LaserDrillRarity rarity = new LaserDrillRarity(new RegistryKey[]{}, new RegistryKey[]{}, depth_min, depth_max, weight);
+    public void addRecipe(String name, IItemStack output, int color, LaserDrillRarityBuilder builder) {
+        LaserDrillRarity rarity = builder.getRarity();
         CraftTweakerAPI.apply(new ActionAddRecipe(this, new LaserDrillOreRecipe(name, output.asVanillaIngredient(), color, null, rarity)));
     }
 
