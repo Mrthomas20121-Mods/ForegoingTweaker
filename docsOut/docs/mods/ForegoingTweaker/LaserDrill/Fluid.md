@@ -35,19 +35,37 @@ LaserDrillFluidRecipe.addJSONRecipe(name as string, data as IData) as void
 
 :::group{name=addRecipe}
 
-
-
 Return Type: void
 
 ```zenscript
-LaserDrillFluidRecipe.addRecipe(output as IFluidStack, color as int, builder as LaserDrillRarityBuilder) as void
+LaserDrillFluidRecipe.addRecipe(name as string, output as IFluidStack, lens as IIngredient, builder as LaserDrillRarityBuilder) as void
 ```
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| output | [IFluidStack](/vanilla/api/fluid/IFluidStack) | Output Fluid |
-| color | int | color of the lens(it's in the name of the lens item) |
-| builder | [LaserDrillRarityBuilder](/mods/ForegoingTweaker/Api/LaserDrillRarityBuilder) | LaserDrillRarityBuilder |
+| name | string | No Description Provided |
+| output | [IFluidStack](/vanilla/api/fluid/IFluidStack) | No Description Provided |
+| lens | [IIngredient](/vanilla/api/items/IIngredient) | No Description Provided |
+| builder | [LaserDrillRarityBuilder](/mods/ForegoingTweaker/Api/LaserDrillRarityBuilder) | No Description Provided |
+
+
+:::
+
+:::group{name=addRecipe}
+
+Return Type: void
+
+```zenscript
+LaserDrillFluidRecipe.addRecipe(name as string, output as IFluidStack, lens as IIngredient, builder1 as LaserDrillRarityBuilder, builder2 as LaserDrillRarityBuilder) as void
+```
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| name | string | No Description Provided |
+| output | [IFluidStack](/vanilla/api/fluid/IFluidStack) | No Description Provided |
+| lens | [IIngredient](/vanilla/api/items/IIngredient) | No Description Provided |
+| builder1 | [LaserDrillRarityBuilder](/mods/ForegoingTweaker/Api/LaserDrillRarityBuilder) | No Description Provided |
+| builder2 | [LaserDrillRarityBuilder](/mods/ForegoingTweaker/Api/LaserDrillRarityBuilder) | No Description Provided |
 
 
 :::

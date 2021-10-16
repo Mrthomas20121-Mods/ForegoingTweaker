@@ -38,14 +38,32 @@ LaserDrillRecipe.addJSONRecipe(name as string, data as IData) as void
 Return Type: void
 
 ```zenscript
-LaserDrillRecipe.addRecipe(name as string, output as IItemStack, color as int, builder as LaserDrillRarityBuilder) as void
+LaserDrillRecipe.addRecipe(name as string, output as IIngredient, color as int, builder as LaserDrillRarityBuilder) as void
 ```
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | name | string | No Description Provided |
-| output | [IItemStack](/vanilla/api/items/IItemStack) | No Description Provided |
+| output | [IIngredient](/vanilla/api/items/IIngredient) | No Description Provided |
 | color | int | No Description Provided |
+| builder | [LaserDrillRarityBuilder](/mods/ForegoingTweaker/Api/LaserDrillRarityBuilder) | No Description Provided |
+
+
+:::
+
+:::group{name=addRecipe}
+
+Return Type: void
+
+```zenscript
+LaserDrillRecipe.addRecipe(name as string, output as IIngredient, lens as IIngredient, builder as LaserDrillRarityBuilder) as void
+```
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| name | string | No Description Provided |
+| output | [IIngredient](/vanilla/api/items/IIngredient) | No Description Provided |
+| lens | [IIngredient](/vanilla/api/items/IIngredient) | No Description Provided |
 | builder | [LaserDrillRarityBuilder](/mods/ForegoingTweaker/Api/LaserDrillRarityBuilder) | No Description Provided |
 
 
