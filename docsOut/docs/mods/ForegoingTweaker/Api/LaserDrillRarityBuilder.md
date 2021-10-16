@@ -12,7 +12,7 @@ import mods.foregoing_tweaker.laser_drill.LaserDrillRarityBuilder;
 
 ## Constructors
 
-No Description Provided
+
 ```zenscript
 new LaserDrillRarityBuilder() as LaserDrillRarityBuilder
 new LaserDrillRarityBuilder();

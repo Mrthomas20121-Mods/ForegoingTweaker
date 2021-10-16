@@ -1,4 +1,4 @@
-# DissolutionChamberRecipe
+# StoneWorkGenerateRecipe
 
 This class was added by a mod with mod-id `foregoing_tweaker`. So you need to have this mod installed if you want to use this feature.
 
@@ -6,12 +6,12 @@ This class was added by a mod with mod-id `foregoing_tweaker`. So you need to ha
 
 It might be required for you to import the package if you encounter any issues (like casting an Array), so better be safe than sorry and add the import at the very top of the file.
 ```zenscript
-import mods.foregoing_tweaker.DissolutionChamberRecipe;
+import mods.foregoing_tweaker.StoneWorkGenerateRecipe;
 ```
 
 
 ## Implemented Interfaces
-DissolutionChamberRecipe implements the following interfaces. That means all methods defined in these interfaces are also available in DissolutionChamberRecipe
+StoneWorkGenerateRecipe implements the following interfaces. That means all methods defined in these interfaces are also available in StoneWorkGenerateRecipe
 
 - [IRecipeManager](/vanilla/api/managers/IRecipeManager)
 
@@ -22,7 +22,7 @@ DissolutionChamberRecipe implements the following interfaces. That means all met
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.addJSONRecipe(name as string, data as IData) as void
+StoneWorkGenerateRecipe.addJSONRecipe(name as string, data as IData) as void
 ```
 
 | Parameter | Type | Description |
@@ -38,7 +38,7 @@ DissolutionChamberRecipe.addJSONRecipe(name as string, data as IData) as void
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.addRecipe(name as string, output as IItemStack, waterNeed as int, lavaNeed as int) as void
+StoneWorkGenerateRecipe.addRecipe(name as string, output as IItemStack, waterNeed as int, lavaNeed as int) as void
 ```
 
 | Parameter | Type | Description |
@@ -56,7 +56,7 @@ DissolutionChamberRecipe.addRecipe(name as string, output as IItemStack, waterNe
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.addRecipe(name as string, output as IItemStack, waterNeed as int, lavaNeed as int, waterConsume as int, lavaConsume as int) as void
+StoneWorkGenerateRecipe.addRecipe(name as string, output as IItemStack, waterNeed as int, lavaNeed as int, waterConsume as int, lavaConsume as int) as void
 ```
 
 | Parameter | Type | Description |
@@ -76,9 +76,9 @@ DissolutionChamberRecipe.addRecipe(name as string, output as IItemStack, waterNe
 Return Type: stdlib.List&lt;[WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)&gt;
 
 ```zenscript
-// DissolutionChamberRecipe.getAllRecipes() as stdlib.List<WrapperRecipe>
+// StoneWorkGenerateRecipe.getAllRecipes() as stdlib.List<WrapperRecipe>
 
-myDissolutionChamberRecipe.getAllRecipes();
+myStoneWorkGenerateRecipe.getAllRecipes();
 ```
 
 :::
@@ -88,7 +88,7 @@ myDissolutionChamberRecipe.getAllRecipes();
 Return Type: [WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)
 
 ```zenscript
-DissolutionChamberRecipe.getRecipeByName(name as string) as WrapperRecipe
+StoneWorkGenerateRecipe.getRecipeByName(name as string) as WrapperRecipe
 ```
 
 | Parameter | Type | Description |
@@ -103,9 +103,9 @@ DissolutionChamberRecipe.getRecipeByName(name as string) as WrapperRecipe
 Return Type: [WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)[[MCResourceLocation](/vanilla/api/util/MCResourceLocation)]
 
 ```zenscript
-// DissolutionChamberRecipe.getRecipeMap() as WrapperRecipe[MCResourceLocation]
+// StoneWorkGenerateRecipe.getRecipeMap() as WrapperRecipe[MCResourceLocation]
 
-myDissolutionChamberRecipe.getRecipeMap();
+myStoneWorkGenerateRecipe.getRecipeMap();
 ```
 
 :::
@@ -115,7 +115,7 @@ myDissolutionChamberRecipe.getRecipeMap();
 Return Type: stdlib.List&lt;[WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)&gt;
 
 ```zenscript
-DissolutionChamberRecipe.getRecipesByOutput(output as IIngredient) as stdlib.List<WrapperRecipe>
+StoneWorkGenerateRecipe.getRecipesByOutput(output as IIngredient) as stdlib.List<WrapperRecipe>
 ```
 
 | Parameter | Type | Description |
@@ -130,9 +130,9 @@ DissolutionChamberRecipe.getRecipesByOutput(output as IIngredient) as stdlib.Lis
 Return Type: void
 
 ```zenscript
-// DissolutionChamberRecipe.removeAll() as void
+// StoneWorkGenerateRecipe.removeAll() as void
 
-myDissolutionChamberRecipe.removeAll();
+myStoneWorkGenerateRecipe.removeAll();
 ```
 
 :::
@@ -142,7 +142,7 @@ myDissolutionChamberRecipe.removeAll();
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeByModid(modid as string) as void
+StoneWorkGenerateRecipe.removeByModid(modid as string) as void
 ```
 
 | Parameter | Type | Description |
@@ -157,7 +157,7 @@ DissolutionChamberRecipe.removeByModid(modid as string) as void
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeByModid(modid as string, exclude as RecipeFilter) as void
+StoneWorkGenerateRecipe.removeByModid(modid as string, exclude as RecipeFilter) as void
 ```
 
 | Parameter | Type | Description |
@@ -173,7 +173,7 @@ DissolutionChamberRecipe.removeByModid(modid as string, exclude as RecipeFilter)
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeByName(name as string) as void
+StoneWorkGenerateRecipe.removeByName(name as string) as void
 ```
 
 | Parameter | Type | Description |
@@ -188,7 +188,7 @@ DissolutionChamberRecipe.removeByName(name as string) as void
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeByRegex(regex as string) as void
+StoneWorkGenerateRecipe.removeByRegex(regex as string) as void
 ```
 
 | Parameter | Type | Description |
@@ -203,7 +203,7 @@ DissolutionChamberRecipe.removeByRegex(regex as string) as void
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeByRegex(regex as string, exclude as RecipeFilter) as void
+StoneWorkGenerateRecipe.removeByRegex(regex as string, exclude as RecipeFilter) as void
 ```
 
 | Parameter | Type | Description |
@@ -219,7 +219,7 @@ DissolutionChamberRecipe.removeByRegex(regex as string, exclude as RecipeFilter)
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeRecipe(output as IIngredient) as void
+StoneWorkGenerateRecipe.removeRecipe(output as IIngredient) as void
 ```
 
 | Parameter | Type | Description |
@@ -234,7 +234,7 @@ DissolutionChamberRecipe.removeRecipe(output as IIngredient) as void
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeRecipe(output as IItemStack) as void
+StoneWorkGenerateRecipe.removeRecipe(output as IItemStack) as void
 ```
 
 | Parameter | Type | Description |
@@ -249,7 +249,7 @@ DissolutionChamberRecipe.removeRecipe(output as IItemStack) as void
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeRecipeByInput(input as IItemStack) as void
+StoneWorkGenerateRecipe.removeRecipeByInput(input as IItemStack) as void
 ```
 
 | Parameter | Type | Description |

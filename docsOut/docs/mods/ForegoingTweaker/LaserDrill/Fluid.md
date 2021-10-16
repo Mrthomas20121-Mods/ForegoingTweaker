@@ -46,7 +46,7 @@ LaserDrillFluidRecipe.addRecipe(output as IFluidStack, color as int, builder as 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | output | [IFluidStack](/vanilla/api/fluid/IFluidStack) | Output Fluid |
-| color | int | color of the lens(it's in the name of the lens) |
+| color | int | color of the lens(it's in the name of the lens item) |
 | builder | [LaserDrillRarityBuilder](/mods/ForegoingTweaker/Api/LaserDrillRarityBuilder) | LaserDrillRarityBuilder |
 
 

@@ -12,7 +12,7 @@
         },
         "MaterialStoneworkFactory": {
           "Crusher": "mods/ForegoingTweaker/MaterialStoneworkFactory/Crusher.md",
-          "DissolutionChamberRecipe": "mods/ForegoingTweaker/MaterialStoneworkFactory/StoneworkGenerate.md"
+          "StoneWorkGenerateRecipe": "mods/ForegoingTweaker/MaterialStoneworkFactory/StoneworkGenerate.md"
         }
       }
     }

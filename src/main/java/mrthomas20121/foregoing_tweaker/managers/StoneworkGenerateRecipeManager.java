@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 import org.openzen.zencode.java.ZenCodeType;
 
 @Document("mods/ForegoingTweaker/MaterialStoneworkFactory/StoneworkGenerate")
-@ZenCodeType.Name("mods.foregoing_tweaker.DissolutionChamberRecipe")
+@ZenCodeType.Name("mods.foregoing_tweaker.StoneWorkGenerateRecipe")
 @ZenRegister
 public class StoneworkGenerateRecipeManager implements IRecipeManager {
 
