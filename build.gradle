@@ -23,7 +23,6 @@ archivesBaseName = 'foregoing_tweaker'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
 
-println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
     mappings channel: 'official', version: '1.16.5'
 
@@ -117,37 +116,14 @@ repositories {
     }
 }
 
-ext.artifact_version = 'NFG'
-if (System.getenv().ARTIFACT_VERSION == null) {
-    artifact_version = "${foregoing_tweaker_version}"
-}
-if (System.getenv().ARTIFACT_VERSION != null) {
-    artifact_version = "${system.getenv().ARTIFACT_VERSION}"
-}
-
-def modsTomlSpec = copySpec{
-    from(sourceSets.main.resources) {
-        include 'META-INF/mods.toml'
-        expand 'version': artifact_version,
-            'loader_range': loader_range,
-            'minecraft_range': minecraft_range,
-            'forge_range': forge_range
-    }
-}
-
-def buildPaths = [
-    "$rootDir/out/production/resources", // IDEA
-    "$rootDir/bin", // Eclipse
-]
-
 jar {
     manifest {
         attributes([
             "Specification-Title": "ForegoingTweaker",
             "Specification-Vendor": "Mrthomas20121",
-            "Specification-Version": "1", // We are version 1 of ourselves
+            "Specification-Version": "1",
             "Implementation-Title": project.name,
-            "Implementation-Version": "${getArchiveVersion()}",
+            "Implementation-Version": project.version,
             "Implementation-Vendor" :"foregoing_tweaker",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])

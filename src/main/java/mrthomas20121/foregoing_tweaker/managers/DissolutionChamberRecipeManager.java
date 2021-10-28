@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 @Document("mods/ForegoingTweaker/DissolutionChamber")
-@ZenCodeType.Name("mods.foregoing_tweaker.DissolutionChamberRecipe")
+@ZenCodeType.Name("mods.foregoing_tweaker.DissolutionChamber")
 @ZenRegister
 public class DissolutionChamberRecipeManager implements IRecipeManager {
 

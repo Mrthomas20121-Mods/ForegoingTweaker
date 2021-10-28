@@ -7,15 +7,16 @@ import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.BiomeDictionary;
 import org.openzen.zencode.java.ZenCodeType;
 
 import java.util.Arrays;
+import java.util.Set;
 
 @Document(value = "mods/ForegoingTweaker/Api/LaserDrillRarityBuilder")
 @ZenCodeType.Name("mods.foregoing_tweaker.laser_drill.LaserDrillRarityBuilder")
 @ZenRegister
 public class LaserDrillRarityBuilder {
-
     private RegistryKey<Biome>[] whitelist = new RegistryKey[] {};
     private RegistryKey<Biome>[] blacklist = new RegistryKey[] {};
     private int depth_min = 0;
@@ -24,9 +25,7 @@ public class LaserDrillRarityBuilder {
     private LaserDrillRarity rarity;
 
     @ZenCodeType.Constructor
-    public LaserDrillRarityBuilder() {
-
-    }
+    public LaserDrillRarityBuilder() {}
 
     @ZenCodeType.Method
     public LaserDrillRarityBuilder setDepthMin(int depth_min) {
@@ -43,6 +42,32 @@ public class LaserDrillRarityBuilder {
     @ZenCodeType.Method
     public LaserDrillRarityBuilder setWeight(int weight) {
         this.weight = weight;
+        return this;
+    }
+
+    @ZenCodeType.Method
+    public LaserDrillRarityBuilder addBiomeDictToWhitelist(String dictionary) {
+        Set<RegistryKey<Biome>> keys = BiomeDictionary.getBiomes(BiomeDictionary.Type.getType(dictionary));
+        int length = whitelist.length;
+        this.whitelist = Arrays.copyOf(this.whitelist, keys.size()+length);
+        int i = length;
+        for(RegistryKey<Biome> key : keys) {
+            whitelist[i] = key;
+            i++;
+        }
+        return this;
+    }
+
+    @ZenCodeType.Method
+    public LaserDrillRarityBuilder addBiomeDictToBlacklist(String dictionary) {
+        Set<RegistryKey<Biome>> keys = BiomeDictionary.getBiomes(BiomeDictionary.Type.getType(dictionary));
+        int length = blacklist.length;
+        this.blacklist = Arrays.copyOf(this.blacklist, keys.size()+length);
+        int i = length;
+        for(RegistryKey<Biome> key : keys) {
+            blacklist[i] = key;
+            i++;
+        }
         return this;
     }
 

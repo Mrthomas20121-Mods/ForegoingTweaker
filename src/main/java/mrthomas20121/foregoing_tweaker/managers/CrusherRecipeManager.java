@@ -12,8 +12,8 @@ import net.minecraft.util.ResourceLocation;
 import org.openzen.zencode.java.ZenCodeType;
 
 @Document("mods/ForegoingTweaker/MaterialStoneworkFactory/Crusher")
+@ZenCodeType.Name("mods.foregoing_tweaker.LaserDrill.Crusher")
 @ZenRegister
-@ZenCodeType.Name("mods.foregoing_tweaker.Crusher")
 public class CrusherRecipeManager implements IRecipeManager {
 
     @ZenCodeType.Method

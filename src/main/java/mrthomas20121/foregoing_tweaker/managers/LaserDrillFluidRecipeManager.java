@@ -16,7 +16,7 @@ import net.minecraft.util.ResourceLocation;
 import org.openzen.zencode.java.ZenCodeType;
 
 @Document(value = "mods/ForegoingTweaker/LaserDrill/Fluid")
-@ZenCodeType.Name("mods.foregoing_tweaker.LaserDrillFluidRecipe")
+@ZenCodeType.Name("mods.foregoing_tweaker.LaserDrillFluid")
 @ZenRegister
 public class LaserDrillFluidRecipeManager implements IRecipeManager {
 

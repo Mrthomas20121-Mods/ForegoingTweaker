@@ -1,4 +1,4 @@
-# Crusher
+# FluidExtractor
 
 This class was added by a mod with mod-id `foregoing_tweaker`. So you need to have this mod installed if you want to use this feature.
 
@@ -6,12 +6,12 @@ This class was added by a mod with mod-id `foregoing_tweaker`. So you need to ha
 
 It might be required for you to import the package if you encounter any issues (like casting an Array), so better be safe than sorry and add the import at the very top of the file.
 ```zenscript
-import mods.foregoing_tweaker.LaserDrill.Crusher;
+import mods.foregoing_tweaker.FluidExtractor;
 ```
 
 
 ## Implemented Interfaces
-Crusher implements the following interfaces. That means all methods defined in these interfaces are also available in Crusher
+FluidExtractor implements the following interfaces. That means all methods defined in these interfaces are also available in FluidExtractor
 
 - [IRecipeManager](/vanilla/api/managers/IRecipeManager)
 
@@ -22,7 +22,7 @@ Crusher implements the following interfaces. That means all methods defined in t
 Return Type: void
 
 ```zenscript
-Crusher.addJSONRecipe(name as string, data as IData) as void
+FluidExtractor.addJSONRecipe(name as string, data as IData) as void
 ```
 
 | Parameter | Type | Description |
@@ -38,14 +38,36 @@ Crusher.addJSONRecipe(name as string, data as IData) as void
 Return Type: void
 
 ```zenscript
-Crusher.addRecipe(name as string, output as IIngredient, ingredient as IIngredient) as void
+FluidExtractor.addRecipe(name as string, input as IItemStack, block as IItemStack, breakChance as float, output as IFluidStack) as void
 ```
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | name | string | No Description Provided |
-| output | [IIngredient](/vanilla/api/items/IIngredient) | No Description Provided |
-| ingredient | [IIngredient](/vanilla/api/items/IIngredient) | No Description Provided |
+| input | [IItemStack](/vanilla/api/items/IItemStack) | No Description Provided |
+| block | [IItemStack](/vanilla/api/items/IItemStack) | No Description Provided |
+| breakChance | float | No Description Provided |
+| output | [IFluidStack](/vanilla/api/fluid/IFluidStack) | No Description Provided |
+
+
+:::
+
+:::group{name=addRecipe}
+
+Return Type: void
+
+```zenscript
+FluidExtractor.addRecipe(name as string, input as IItemStack, block as IItemStack, breakChance as float, output as IFluidStack, defaultRecipe as boolean) as void
+```
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| name | string | No Description Provided |
+| input | [IItemStack](/vanilla/api/items/IItemStack) | No Description Provided |
+| block | [IItemStack](/vanilla/api/items/IItemStack) | No Description Provided |
+| breakChance | float | No Description Provided |
+| output | [IFluidStack](/vanilla/api/fluid/IFluidStack) | No Description Provided |
+| defaultRecipe | boolean | No Description Provided |
 
 
 :::
@@ -55,9 +77,9 @@ Crusher.addRecipe(name as string, output as IIngredient, ingredient as IIngredie
 Return Type: stdlib.List&lt;[WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)&gt;
 
 ```zenscript
-// Crusher.getAllRecipes() as stdlib.List<WrapperRecipe>
+// FluidExtractor.getAllRecipes() as stdlib.List<WrapperRecipe>
 
-myCrusher.getAllRecipes();
+myFluidExtractor.getAllRecipes();
 ```
 
 :::
@@ -67,7 +89,7 @@ myCrusher.getAllRecipes();
 Return Type: [WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)
 
 ```zenscript
-Crusher.getRecipeByName(name as string) as WrapperRecipe
+FluidExtractor.getRecipeByName(name as string) as WrapperRecipe
 ```
 
 | Parameter | Type | Description |
@@ -82,9 +104,9 @@ Crusher.getRecipeByName(name as string) as WrapperRecipe
 Return Type: [WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)[[MCResourceLocation](/vanilla/api/util/MCResourceLocation)]
 
 ```zenscript
-// Crusher.getRecipeMap() as WrapperRecipe[MCResourceLocation]
+// FluidExtractor.getRecipeMap() as WrapperRecipe[MCResourceLocation]
 
-myCrusher.getRecipeMap();
+myFluidExtractor.getRecipeMap();
 ```
 
 :::
@@ -94,7 +116,7 @@ myCrusher.getRecipeMap();
 Return Type: stdlib.List&lt;[WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)&gt;
 
 ```zenscript
-Crusher.getRecipesByOutput(output as IIngredient) as stdlib.List<WrapperRecipe>
+FluidExtractor.getRecipesByOutput(output as IIngredient) as stdlib.List<WrapperRecipe>
 ```
 
 | Parameter | Type | Description |
@@ -109,9 +131,9 @@ Crusher.getRecipesByOutput(output as IIngredient) as stdlib.List<WrapperRecipe>
 Return Type: void
 
 ```zenscript
-// Crusher.removeAll() as void
+// FluidExtractor.removeAll() as void
 
-myCrusher.removeAll();
+myFluidExtractor.removeAll();
 ```
 
 :::
@@ -121,7 +143,7 @@ myCrusher.removeAll();
 Return Type: void
 
 ```zenscript
-Crusher.removeByModid(modid as string) as void
+FluidExtractor.removeByModid(modid as string) as void
 ```
 
 | Parameter | Type | Description |
@@ -136,7 +158,7 @@ Crusher.removeByModid(modid as string) as void
 Return Type: void
 
 ```zenscript
-Crusher.removeByModid(modid as string, exclude as RecipeFilter) as void
+FluidExtractor.removeByModid(modid as string, exclude as RecipeFilter) as void
 ```
 
 | Parameter | Type | Description |
@@ -152,7 +174,7 @@ Crusher.removeByModid(modid as string, exclude as RecipeFilter) as void
 Return Type: void
 
 ```zenscript
-Crusher.removeByName(name as string) as void
+FluidExtractor.removeByName(name as string) as void
 ```
 
 | Parameter | Type | Description |
@@ -167,7 +189,7 @@ Crusher.removeByName(name as string) as void
 Return Type: void
 
 ```zenscript
-Crusher.removeByRegex(regex as string) as void
+FluidExtractor.removeByRegex(regex as string) as void
 ```
 
 | Parameter | Type | Description |
@@ -182,7 +204,7 @@ Crusher.removeByRegex(regex as string) as void
 Return Type: void
 
 ```zenscript
-Crusher.removeByRegex(regex as string, exclude as RecipeFilter) as void
+FluidExtractor.removeByRegex(regex as string, exclude as RecipeFilter) as void
 ```
 
 | Parameter | Type | Description |
@@ -198,7 +220,7 @@ Crusher.removeByRegex(regex as string, exclude as RecipeFilter) as void
 Return Type: void
 
 ```zenscript
-Crusher.removeRecipe(output as IIngredient) as void
+FluidExtractor.removeRecipe(output as IIngredient) as void
 ```
 
 | Parameter | Type | Description |
@@ -213,7 +235,7 @@ Crusher.removeRecipe(output as IIngredient) as void
 Return Type: void
 
 ```zenscript
-Crusher.removeRecipe(output as IItemStack) as void
+FluidExtractor.removeRecipe(output as IItemStack) as void
 ```
 
 | Parameter | Type | Description |
@@ -228,7 +250,7 @@ Crusher.removeRecipe(output as IItemStack) as void
 Return Type: void
 
 ```zenscript
-Crusher.removeRecipeByInput(input as IItemStack) as void
+FluidExtractor.removeRecipeByInput(input as IItemStack) as void
 ```
 
 | Parameter | Type | Description |

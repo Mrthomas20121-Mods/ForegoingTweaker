@@ -20,6 +20,36 @@ new LaserDrillRarityBuilder();
 
 ## Methods
 
+:::group{name=addBiomeDictToBlacklist}
+
+Return Type: [LaserDrillRarityBuilder](/mods/ForegoingTweaker/Api/LaserDrillRarityBuilder)
+
+```zenscript
+LaserDrillRarityBuilder.addBiomeDictToBlacklist(dictionary as string) as LaserDrillRarityBuilder
+```
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| dictionary | string | No Description Provided |
+
+
+:::
+
+:::group{name=addBiomeDictToWhitelist}
+
+Return Type: [LaserDrillRarityBuilder](/mods/ForegoingTweaker/Api/LaserDrillRarityBuilder)
+
+```zenscript
+LaserDrillRarityBuilder.addBiomeDictToWhitelist(dictionary as string) as LaserDrillRarityBuilder
+```
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| dictionary | string | No Description Provided |
+
+
+:::
+
 :::group{name=addBiomeToBlacklist}
 
 Return Type: [LaserDrillRarityBuilder](/mods/ForegoingTweaker/Api/LaserDrillRarityBuilder)

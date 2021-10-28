@@ -1,4 +1,4 @@
-# LaserDrillFluidRecipe
+# LaserDrillFluid
 
 This class was added by a mod with mod-id `foregoing_tweaker`. So you need to have this mod installed if you want to use this feature.
 
@@ -6,12 +6,12 @@ This class was added by a mod with mod-id `foregoing_tweaker`. So you need to ha
 
 It might be required for you to import the package if you encounter any issues (like casting an Array), so better be safe than sorry and add the import at the very top of the file.
 ```zenscript
-import mods.foregoing_tweaker.LaserDrillFluidRecipe;
+import mods.foregoing_tweaker.LaserDrillFluid;
 ```
 
 
 ## Implemented Interfaces
-LaserDrillFluidRecipe implements the following interfaces. That means all methods defined in these interfaces are also available in LaserDrillFluidRecipe
+LaserDrillFluid implements the following interfaces. That means all methods defined in these interfaces are also available in LaserDrillFluid
 
 - [IRecipeManager](/vanilla/api/managers/IRecipeManager)
 
@@ -22,7 +22,7 @@ LaserDrillFluidRecipe implements the following interfaces. That means all method
 Return Type: void
 
 ```zenscript
-LaserDrillFluidRecipe.addJSONRecipe(name as string, data as IData) as void
+LaserDrillFluid.addJSONRecipe(name as string, data as IData) as void
 ```
 
 | Parameter | Type | Description |
@@ -38,7 +38,7 @@ LaserDrillFluidRecipe.addJSONRecipe(name as string, data as IData) as void
 Return Type: void
 
 ```zenscript
-LaserDrillFluidRecipe.addRecipe(name as string, output as IFluidStack, lens as IIngredient, builder as LaserDrillRarityBuilder) as void
+LaserDrillFluid.addRecipe(name as string, output as IFluidStack, lens as IIngredient, builder as LaserDrillRarityBuilder) as void
 ```
 
 | Parameter | Type | Description |
@@ -56,7 +56,7 @@ LaserDrillFluidRecipe.addRecipe(name as string, output as IFluidStack, lens as I
 Return Type: void
 
 ```zenscript
-LaserDrillFluidRecipe.addRecipe(name as string, output as IFluidStack, lens as IIngredient, builder1 as LaserDrillRarityBuilder, builder2 as LaserDrillRarityBuilder) as void
+LaserDrillFluid.addRecipe(name as string, output as IFluidStack, lens as IIngredient, builder1 as LaserDrillRarityBuilder, builder2 as LaserDrillRarityBuilder) as void
 ```
 
 | Parameter | Type | Description |
@@ -75,9 +75,9 @@ LaserDrillFluidRecipe.addRecipe(name as string, output as IFluidStack, lens as I
 Return Type: stdlib.List&lt;[WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)&gt;
 
 ```zenscript
-// LaserDrillFluidRecipe.getAllRecipes() as stdlib.List<WrapperRecipe>
+// LaserDrillFluid.getAllRecipes() as stdlib.List<WrapperRecipe>
 
-myLaserDrillFluidRecipe.getAllRecipes();
+myLaserDrillFluid.getAllRecipes();
 ```
 
 :::
@@ -87,7 +87,7 @@ myLaserDrillFluidRecipe.getAllRecipes();
 Return Type: [WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)
 
 ```zenscript
-LaserDrillFluidRecipe.getRecipeByName(name as string) as WrapperRecipe
+LaserDrillFluid.getRecipeByName(name as string) as WrapperRecipe
 ```
 
 | Parameter | Type | Description |
@@ -102,9 +102,9 @@ LaserDrillFluidRecipe.getRecipeByName(name as string) as WrapperRecipe
 Return Type: [WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)[[MCResourceLocation](/vanilla/api/util/MCResourceLocation)]
 
 ```zenscript
-// LaserDrillFluidRecipe.getRecipeMap() as WrapperRecipe[MCResourceLocation]
+// LaserDrillFluid.getRecipeMap() as WrapperRecipe[MCResourceLocation]
 
-myLaserDrillFluidRecipe.getRecipeMap();
+myLaserDrillFluid.getRecipeMap();
 ```
 
 :::
@@ -114,7 +114,7 @@ myLaserDrillFluidRecipe.getRecipeMap();
 Return Type: stdlib.List&lt;[WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)&gt;
 
 ```zenscript
-LaserDrillFluidRecipe.getRecipesByOutput(output as IIngredient) as stdlib.List<WrapperRecipe>
+LaserDrillFluid.getRecipesByOutput(output as IIngredient) as stdlib.List<WrapperRecipe>
 ```
 
 | Parameter | Type | Description |
@@ -129,9 +129,9 @@ LaserDrillFluidRecipe.getRecipesByOutput(output as IIngredient) as stdlib.List<W
 Return Type: void
 
 ```zenscript
-// LaserDrillFluidRecipe.removeAll() as void
+// LaserDrillFluid.removeAll() as void
 
-myLaserDrillFluidRecipe.removeAll();
+myLaserDrillFluid.removeAll();
 ```
 
 :::
@@ -141,7 +141,7 @@ myLaserDrillFluidRecipe.removeAll();
 Return Type: void
 
 ```zenscript
-LaserDrillFluidRecipe.removeByModid(modid as string) as void
+LaserDrillFluid.removeByModid(modid as string) as void
 ```
 
 | Parameter | Type | Description |
@@ -156,7 +156,7 @@ LaserDrillFluidRecipe.removeByModid(modid as string) as void
 Return Type: void
 
 ```zenscript
-LaserDrillFluidRecipe.removeByModid(modid as string, exclude as RecipeFilter) as void
+LaserDrillFluid.removeByModid(modid as string, exclude as RecipeFilter) as void
 ```
 
 | Parameter | Type | Description |
@@ -172,7 +172,7 @@ LaserDrillFluidRecipe.removeByModid(modid as string, exclude as RecipeFilter) as
 Return Type: void
 
 ```zenscript
-LaserDrillFluidRecipe.removeByName(name as string) as void
+LaserDrillFluid.removeByName(name as string) as void
 ```
 
 | Parameter | Type | Description |
@@ -187,7 +187,7 @@ LaserDrillFluidRecipe.removeByName(name as string) as void
 Return Type: void
 
 ```zenscript
-LaserDrillFluidRecipe.removeByRegex(regex as string) as void
+LaserDrillFluid.removeByRegex(regex as string) as void
 ```
 
 | Parameter | Type | Description |
@@ -202,7 +202,7 @@ LaserDrillFluidRecipe.removeByRegex(regex as string) as void
 Return Type: void
 
 ```zenscript
-LaserDrillFluidRecipe.removeByRegex(regex as string, exclude as RecipeFilter) as void
+LaserDrillFluid.removeByRegex(regex as string, exclude as RecipeFilter) as void
 ```
 
 | Parameter | Type | Description |
@@ -218,7 +218,7 @@ LaserDrillFluidRecipe.removeByRegex(regex as string, exclude as RecipeFilter) as
 Return Type: void
 
 ```zenscript
-LaserDrillFluidRecipe.removeRecipe(output as IIngredient) as void
+LaserDrillFluid.removeRecipe(output as IIngredient) as void
 ```
 
 | Parameter | Type | Description |
@@ -233,7 +233,7 @@ LaserDrillFluidRecipe.removeRecipe(output as IIngredient) as void
 Return Type: void
 
 ```zenscript
-LaserDrillFluidRecipe.removeRecipe(output as IItemStack) as void
+LaserDrillFluid.removeRecipe(output as IItemStack) as void
 ```
 
 | Parameter | Type | Description |
@@ -248,7 +248,7 @@ LaserDrillFluidRecipe.removeRecipe(output as IItemStack) as void
 Return Type: void
 
 ```zenscript
-LaserDrillFluidRecipe.removeRecipeByInput(input as IItemStack) as void
+LaserDrillFluid.removeRecipeByInput(input as IItemStack) as void
 ```
 
 | Parameter | Type | Description |

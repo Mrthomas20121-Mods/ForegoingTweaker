@@ -1,4 +1,4 @@
-# DissolutionChamberRecipe
+# DissolutionChamber
 
 This class was added by a mod with mod-id `foregoing_tweaker`. So you need to have this mod installed if you want to use this feature.
 
@@ -6,12 +6,12 @@ This class was added by a mod with mod-id `foregoing_tweaker`. So you need to ha
 
 It might be required for you to import the package if you encounter any issues (like casting an Array), so better be safe than sorry and add the import at the very top of the file.
 ```zenscript
-import mods.foregoing_tweaker.DissolutionChamberRecipe;
+import mods.foregoing_tweaker.DissolutionChamber;
 ```
 
 
 ## Implemented Interfaces
-DissolutionChamberRecipe implements the following interfaces. That means all methods defined in these interfaces are also available in DissolutionChamberRecipe
+DissolutionChamber implements the following interfaces. That means all methods defined in these interfaces are also available in DissolutionChamber
 
 - [IRecipeManager](/vanilla/api/managers/IRecipeManager)
 
@@ -22,7 +22,7 @@ DissolutionChamberRecipe implements the following interfaces. That means all met
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.addJSONRecipe(name as string, data as IData) as void
+DissolutionChamber.addJSONRecipe(name as string, data as IData) as void
 ```
 
 | Parameter | Type | Description |
@@ -38,7 +38,7 @@ DissolutionChamberRecipe.addJSONRecipe(name as string, data as IData) as void
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.addRecipe(name as string, inputs as IIngredient[], inputFluid as IFluidStack, processingTime as int, output as IItemStack) as void
+DissolutionChamber.addRecipe(name as string, inputs as IIngredient[], inputFluid as IFluidStack, processingTime as int, output as IItemStack) as void
 ```
 
 | Parameter | Type | Description |
@@ -57,7 +57,7 @@ DissolutionChamberRecipe.addRecipe(name as string, inputs as IIngredient[], inpu
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.addRecipe(name as string, inputs as IIngredient[], processingTime as int, output as IItemStack, outputFluid as IFluidStack) as void
+DissolutionChamber.addRecipe(name as string, inputs as IIngredient[], processingTime as int, output as IItemStack, outputFluid as IFluidStack) as void
 ```
 
 | Parameter | Type | Description |
@@ -76,7 +76,7 @@ DissolutionChamberRecipe.addRecipe(name as string, inputs as IIngredient[], proc
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.addRecipe(name as string, inputs as IIngredient[], inputFluid as IFluidStack, processingTime as int, output as IItemStack, outputFluid as IFluidStack) as void
+DissolutionChamber.addRecipe(name as string, inputs as IIngredient[], inputFluid as IFluidStack, processingTime as int, output as IItemStack, outputFluid as IFluidStack) as void
 ```
 
 | Parameter | Type | Description |
@@ -96,9 +96,9 @@ DissolutionChamberRecipe.addRecipe(name as string, inputs as IIngredient[], inpu
 Return Type: stdlib.List&lt;[WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)&gt;
 
 ```zenscript
-// DissolutionChamberRecipe.getAllRecipes() as stdlib.List<WrapperRecipe>
+// DissolutionChamber.getAllRecipes() as stdlib.List<WrapperRecipe>
 
-myDissolutionChamberRecipe.getAllRecipes();
+myDissolutionChamber.getAllRecipes();
 ```
 
 :::
@@ -108,7 +108,7 @@ myDissolutionChamberRecipe.getAllRecipes();
 Return Type: [WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)
 
 ```zenscript
-DissolutionChamberRecipe.getRecipeByName(name as string) as WrapperRecipe
+DissolutionChamber.getRecipeByName(name as string) as WrapperRecipe
 ```
 
 | Parameter | Type | Description |
@@ -123,9 +123,9 @@ DissolutionChamberRecipe.getRecipeByName(name as string) as WrapperRecipe
 Return Type: [WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)[[MCResourceLocation](/vanilla/api/util/MCResourceLocation)]
 
 ```zenscript
-// DissolutionChamberRecipe.getRecipeMap() as WrapperRecipe[MCResourceLocation]
+// DissolutionChamber.getRecipeMap() as WrapperRecipe[MCResourceLocation]
 
-myDissolutionChamberRecipe.getRecipeMap();
+myDissolutionChamber.getRecipeMap();
 ```
 
 :::
@@ -135,7 +135,7 @@ myDissolutionChamberRecipe.getRecipeMap();
 Return Type: stdlib.List&lt;[WrapperRecipe](/vanilla/api/recipe/WrapperRecipe)&gt;
 
 ```zenscript
-DissolutionChamberRecipe.getRecipesByOutput(output as IIngredient) as stdlib.List<WrapperRecipe>
+DissolutionChamber.getRecipesByOutput(output as IIngredient) as stdlib.List<WrapperRecipe>
 ```
 
 | Parameter | Type | Description |
@@ -150,9 +150,9 @@ DissolutionChamberRecipe.getRecipesByOutput(output as IIngredient) as stdlib.Lis
 Return Type: void
 
 ```zenscript
-// DissolutionChamberRecipe.removeAll() as void
+// DissolutionChamber.removeAll() as void
 
-myDissolutionChamberRecipe.removeAll();
+myDissolutionChamber.removeAll();
 ```
 
 :::
@@ -162,7 +162,7 @@ myDissolutionChamberRecipe.removeAll();
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeByModid(modid as string) as void
+DissolutionChamber.removeByModid(modid as string) as void
 ```
 
 | Parameter | Type | Description |
@@ -177,7 +177,7 @@ DissolutionChamberRecipe.removeByModid(modid as string) as void
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeByModid(modid as string, exclude as RecipeFilter) as void
+DissolutionChamber.removeByModid(modid as string, exclude as RecipeFilter) as void
 ```
 
 | Parameter | Type | Description |
@@ -193,7 +193,7 @@ DissolutionChamberRecipe.removeByModid(modid as string, exclude as RecipeFilter)
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeByName(name as string) as void
+DissolutionChamber.removeByName(name as string) as void
 ```
 
 | Parameter | Type | Description |
@@ -208,7 +208,7 @@ DissolutionChamberRecipe.removeByName(name as string) as void
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeByRegex(regex as string) as void
+DissolutionChamber.removeByRegex(regex as string) as void
 ```
 
 | Parameter | Type | Description |
@@ -223,7 +223,7 @@ DissolutionChamberRecipe.removeByRegex(regex as string) as void
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeByRegex(regex as string, exclude as RecipeFilter) as void
+DissolutionChamber.removeByRegex(regex as string, exclude as RecipeFilter) as void
 ```
 
 | Parameter | Type | Description |
@@ -239,7 +239,7 @@ DissolutionChamberRecipe.removeByRegex(regex as string, exclude as RecipeFilter)
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeRecipe(output as IIngredient) as void
+DissolutionChamber.removeRecipe(output as IIngredient) as void
 ```
 
 | Parameter | Type | Description |
@@ -254,7 +254,7 @@ DissolutionChamberRecipe.removeRecipe(output as IIngredient) as void
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeRecipe(output as IItemStack) as void
+DissolutionChamber.removeRecipe(output as IItemStack) as void
 ```
 
 | Parameter | Type | Description |
@@ -269,7 +269,7 @@ DissolutionChamberRecipe.removeRecipe(output as IItemStack) as void
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeRecipeByInput(input as IItemStack) as void
+DissolutionChamber.removeRecipeByInput(input as IItemStack) as void
 ```
 
 | Parameter | Type | Description |
@@ -284,7 +284,7 @@ DissolutionChamberRecipe.removeRecipeByInput(input as IItemStack) as void
 Return Type: void
 
 ```zenscript
-DissolutionChamberRecipe.removeRecipeByOutput(output as IFluidStack) as void
+DissolutionChamber.removeRecipeByOutput(output as IFluidStack) as void
 ```
 
 | Parameter | Type | Description |
