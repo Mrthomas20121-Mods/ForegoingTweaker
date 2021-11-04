@@ -22,7 +22,6 @@ public class LaserDrillRarityBuilder {
     private int depth_min = 0;
     private int depth_max = 255;
     private int weight = 0;
-    private LaserDrillRarity rarity;
 
     @ZenCodeType.Constructor
     public LaserDrillRarityBuilder() {}
@@ -98,13 +97,8 @@ public class LaserDrillRarityBuilder {
     }
 
     @ZenCodeType.Method
-    public LaserDrillRarityBuilder build() {
-        this.rarity = new LaserDrillRarity(whitelist, blacklist, this.depth_min, this.depth_max, this.weight);
-        return this;
-    }
-
-    public LaserDrillRarity getRarity() {
-        return rarity;
+    public LaserDrillRarityInterface build() {
+        return new CTLaserDrillRarity(new LaserDrillRarity(whitelist, blacklist, this.depth_min, this.depth_max, this.weight));
     }
 
     private RegistryKey<Biome> getBiome(String name) {

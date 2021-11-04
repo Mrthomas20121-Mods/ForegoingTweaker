@@ -8,9 +8,11 @@ import com.blamejared.crafttweaker.impl.actions.recipes.ActionAddRecipe;
 import com.blamejared.crafttweaker_annotations.annotations.Document;
 import com.buuz135.industrial.recipe.LaserDrillOreRecipe;
 import com.buuz135.industrial.recipe.LaserDrillRarity;
-import mrthomas20121.foregoing_tweaker.laser_drill.LaserDrillRarityBuilder;
+import mrthomas20121.foregoing_tweaker.laser_drill.LaserDrillRarityInterface;
 import net.minecraft.item.crafting.IRecipeType;
 import org.openzen.zencode.java.ZenCodeType;
+
+import java.util.Arrays;
 
 @Document("mods/ForegoingTweaker/LaserDrill/Ores")
 @ZenCodeType.Name("mods.foregoing_tweaker.LaserDrillRecipe")
@@ -18,15 +20,9 @@ import org.openzen.zencode.java.ZenCodeType;
 public class LaserDrillRecipeManager implements IRecipeManager {
 
     @ZenCodeType.Method
-    public void addRecipe(String name, IIngredient output, int color, LaserDrillRarityBuilder builder) {
-        LaserDrillRarity rarity = builder.getRarity();
-        CraftTweakerAPI.apply(new ActionAddRecipe(this, new LaserDrillOreRecipe(name, output.asVanillaIngredient(), color, null, rarity)));
-    }
-
-    @ZenCodeType.Method
-    public void addRecipe(String name, IIngredient output, IIngredient lens, LaserDrillRarityBuilder builder) {
-        LaserDrillRarity rarity = builder.getRarity();
-        CraftTweakerAPI.apply(new ActionAddRecipe(this, new LaserDrillOreRecipe(name, output.asVanillaIngredient(), lens.asVanillaIngredient(), null, rarity), ""));
+    public void addRecipe(String name, IIngredient output, IIngredient lens, LaserDrillRarityInterface...rarities) {
+        LaserDrillRarity[] laserDrillRarities = (LaserDrillRarity[]) Arrays.stream(rarities).map(LaserDrillRarityInterface::getInternal).toArray();
+        CraftTweakerAPI.apply(new ActionAddRecipe(this, new LaserDrillOreRecipe(name, output.asVanillaIngredient(), lens.asVanillaIngredient(), null, laserDrillRarities), ""));
     }
 
     @Override
