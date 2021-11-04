@@ -1,7 +1,6 @@
 package mrthomas20121.foregoing_tweaker.laser_drill;
 
 import com.blamejared.crafttweaker.api.annotations.ZenRegister;
-import com.blamejared.crafttweaker_annotations.annotations.Document;
 import com.buuz135.industrial.recipe.LaserDrillRarity;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,6 @@ import org.openzen.zencode.java.ZenCodeType;
 import java.util.Arrays;
 import java.util.Set;
 
-@Document(value = "mods/ForegoingTweaker/Api/LaserDrillRarityBuilder")
 @ZenCodeType.Name("mods.foregoing_tweaker.laser_drill.LaserDrillRarityBuilder")
 @ZenRegister
 public class LaserDrillRarityBuilder {

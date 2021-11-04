@@ -7,7 +7,6 @@ import com.blamejared.crafttweaker.api.item.IIngredient;
 import com.blamejared.crafttweaker.api.item.IItemStack;
 import com.blamejared.crafttweaker.api.managers.IRecipeManager;
 import com.blamejared.crafttweaker.impl.actions.recipes.ActionAddRecipe;
-import com.blamejared.crafttweaker_annotations.annotations.Document;
 import com.buuz135.industrial.recipe.FluidExtractorRecipe;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -19,7 +18,6 @@ import org.openzen.zencode.java.ZenCodeType;
 
 import java.util.Arrays;
 
-@Document(value = "mods/ForegoingTweaker/FluidExtractor")
 @ZenCodeType.Name("mods.foregoing_tweaker.FluidExtractor")
 @ZenRegister
 public class FluidExtractorRecipeManager implements IRecipeManager {

@@ -6,7 +6,6 @@ import com.blamejared.crafttweaker.api.fluid.IFluidStack;
 import com.blamejared.crafttweaker.api.item.IIngredient;
 import com.blamejared.crafttweaker.api.managers.IRecipeManager;
 import com.blamejared.crafttweaker.impl.actions.recipes.ActionAddRecipe;
-import com.blamejared.crafttweaker_annotations.annotations.Document;
 import com.buuz135.industrial.recipe.LaserDrillFluidRecipe;
 import com.buuz135.industrial.recipe.LaserDrillRarity;
 import mrthomas20121.foregoing_tweaker.laser_drill.LaserDrillRarityInterface;
@@ -16,15 +15,15 @@ import net.minecraft.util.ResourceLocation;
 import org.openzen.zencode.java.ZenCodeType;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
-@Document(value = "mods/ForegoingTweaker/LaserDrill/Fluid")
 @ZenCodeType.Name("mods.foregoing_tweaker.LaserDrillFluid")
 @ZenRegister
 public class LaserDrillFluidRecipeManager implements IRecipeManager {
 
     @ZenCodeType.Method
     public void addRecipe(String name, IFluidStack output, IIngredient lens, LaserDrillRarityInterface...rarities) {
-        LaserDrillRarity[] laserDrillRarities = (LaserDrillRarity[]) Arrays.stream(rarities).map(LaserDrillRarityInterface::getInternal).toArray();
+        LaserDrillRarity[] laserDrillRarities = Arrays.stream(rarities).map(LaserDrillRarityInterface::getInternal).collect(Collectors.toList()).toArray(new LaserDrillRarity[] {});
         CraftTweakerAPI.apply(new ActionAddRecipe(this, new LaserDrillFluidRecipe(name, createNBT(output), lens.asVanillaIngredient(), new ResourceLocation("minecraft:empty"), laserDrillRarities)));
     }
 
