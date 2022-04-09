@@ -15,19 +15,6 @@ Add Crafttweaker support to Industrial Foregoing
 '''
 
 [[dependencies.foregoing_tweaker]]
-    modId="forge"
-    mandatory=true
-    versionRange="[36,)"
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.foregoing_tweaker]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.16.5,1.17)"
-    ordering="NONE"
-    side="BOTH"
-[[dependencies.foregoing_tweaker]]
     modId="industrialforegoing"
     mandatory=true
     versionRange="[3.2,]"
