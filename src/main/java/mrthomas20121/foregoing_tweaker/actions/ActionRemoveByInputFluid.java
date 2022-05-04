@@ -11,13 +11,13 @@ import net.minecraft.util.registry.Registry;
 import java.util.Iterator;
 import java.util.Map;
 
-public class ActionRemoveDCRecipeByOutput extends ActionRecipeBase {
+public class ActionRemoveByInputFluid extends ActionRecipeBase {
 
-    private final IFluidStack output;
+    private final IFluidStack input;
 
-    public ActionRemoveDCRecipeByOutput(IRecipeManager manager, IFluidStack output) {
+    public ActionRemoveByInputFluid(IRecipeManager manager, IFluidStack input) {
         super(manager);
-        this.output = output;
+        this.input = input;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class ActionRemoveDCRecipeByOutput extends ActionRecipeBase {
         while(iterator.hasNext()) {
             DissolutionChamberRecipe recipe = (DissolutionChamberRecipe) iterator.next().getValue();
 
-            if(recipe.outputFluid.isFluidEqual(output.getInternal())) {
+            if(recipe.inputFluid.isFluidEqual(input.getInternal())) {
                 iterator.remove();
             }
         }
@@ -34,6 +34,6 @@ public class ActionRemoveDCRecipeByOutput extends ActionRecipeBase {
 
     @Override
     public String describe() {
-        return "Removing \"" + Registry.RECIPE_TYPE.getKey(getManager().getRecipeType()) + "\" recipes with output" + output.getRegistryName().toString();
+        return "Removing \"" + Registry.RECIPE_TYPE.getKey(getManager().getRecipeType()) + "\" recipes with output" + input.getRegistryName().toString();
     }
 }

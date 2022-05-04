@@ -8,9 +8,8 @@ import com.blamejared.crafttweaker.api.item.IItemStack;
 import com.blamejared.crafttweaker.api.managers.IRecipeManager;
 import com.blamejared.crafttweaker.impl.actions.recipes.ActionAddRecipe;
 import com.blamejared.crafttweaker.impl.fluid.MCFluidStack;
-import com.blamejared.crafttweaker_annotations.annotations.Document;
 import com.buuz135.industrial.recipe.DissolutionChamberRecipe;
-import mrthomas20121.foregoing_tweaker.actions.ActionRemoveDCRecipeByOutput;
+import mrthomas20121.foregoing_tweaker.actions.ActionRemoveByOutputFluid;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
@@ -40,17 +39,22 @@ public class DissolutionChamberRecipeManager implements IRecipeManager {
 
     @ZenCodeType.Method
     public void addRecipe(String name, IIngredient[] inputs, IFluidStack inputFluid, int processingTime, IItemStack output) {
-        addRecipe(name, inputs, inputFluid, processingTime, output, new MCFluidStack(null));
+        addRecipe(name, inputs, inputFluid, processingTime, output, new MCFluidStack(FluidStack.EMPTY));
     }
 
     @ZenCodeType.Method
     public void addRecipe(String name, IIngredient[] inputs, int processingTime, IItemStack output, IFluidStack outputFluid) {
-        addRecipe(name, inputs, new MCFluidStack(null), processingTime, output, outputFluid);
+        addRecipe(name, inputs, new MCFluidStack(FluidStack.EMPTY), processingTime, output, outputFluid);
+    }
+
+    @ZenCodeType.Method
+    public void removeRecipeByInput(IFluidStack output) {
+        CraftTweakerAPI.apply(new ActionRemoveByOutputFluid(this, output));
     }
 
     @ZenCodeType.Method
     public void removeRecipeByOutput(IFluidStack output) {
-        CraftTweakerAPI.apply(new ActionRemoveDCRecipeByOutput(this, output));
+        CraftTweakerAPI.apply(new ActionRemoveByOutputFluid(this, output));
     }
 
     @Override
