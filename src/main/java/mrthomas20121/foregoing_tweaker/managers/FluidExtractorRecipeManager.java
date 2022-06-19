@@ -1,37 +1,33 @@
 package mrthomas20121.foregoing_tweaker.managers;
 
 import com.blamejared.crafttweaker.api.CraftTweakerAPI;
-import com.blamejared.crafttweaker.api.annotations.ZenRegister;
+import com.blamejared.crafttweaker.api.action.recipe.ActionAddRecipe;
+import com.blamejared.crafttweaker.api.annotation.ZenRegister;
 import com.blamejared.crafttweaker.api.fluid.IFluidStack;
-import com.blamejared.crafttweaker.api.item.IIngredient;
+import com.blamejared.crafttweaker.api.ingredient.IIngredient;
 import com.blamejared.crafttweaker.api.item.IItemStack;
-import com.blamejared.crafttweaker.api.managers.IRecipeManager;
-import com.blamejared.crafttweaker.impl.actions.recipes.ActionAddRecipe;
+import com.blamejared.crafttweaker.api.recipe.manager.base.IRecipeManager;
 import com.buuz135.industrial.recipe.FluidExtractorRecipe;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.crafting.StackList;
+import mrthomas20121.foregoing_tweaker.util.StackValue;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.RecipeType;
 import org.openzen.zencode.java.ZenCodeType;
-
-import java.util.Arrays;
 
 @ZenCodeType.Name("mods.foregoing_tweaker.FluidExtractor")
 @ZenRegister
-public class FluidExtractorRecipeManager implements IRecipeManager {
+public class FluidExtractorRecipeManager implements IRecipeManager<FluidExtractorRecipe> {
 
     @ZenCodeType.Method
     public void addRecipe(String name, IIngredient input, IItemStack block, float breakChance, IFluidStack output, boolean defaultRecipe) {
-        Ingredient.IItemList list = new StackList(Arrays.asList(input.asVanillaIngredient().getItems()));
+        StackValue list = new StackValue(input.asVanillaIngredient().getItems());
         Item internal = block.getInternal().getItem();
-        if(internal instanceof BlockItem) {
-            BlockItem internal_block = (BlockItem)internal;
-            CraftTweakerAPI.apply(new ActionAddRecipe(this, new FluidExtractorRecipe(new ResourceLocation("crafttweaker", name), list, internal_block.getBlock(), breakChance, output.getInternal(), defaultRecipe)));
+        if(internal instanceof BlockItem internal_block) {
+            CraftTweakerAPI.apply(new ActionAddRecipe<>(this, new FluidExtractorRecipe(new ResourceLocation("crafttweaker", name), list, internal_block.getBlock(), breakChance, output.getInternal(), defaultRecipe)));
         }
         else {
-            CraftTweakerAPI.logInfo("%s is not a valid block!", output.getRegistryName().toString());
+            CraftTweakerAPI.LOGGER.info(output.getRegistryName().toString()+" is not a valid block!");
         }
     }
 
@@ -41,7 +37,7 @@ public class FluidExtractorRecipeManager implements IRecipeManager {
     }
 
     @Override
-    public IRecipeType<FluidExtractorRecipe> getRecipeType() {
+    public RecipeType<FluidExtractorRecipe> getRecipeType() {
         return FluidExtractorRecipe.SERIALIZER.getRecipeType();
     }
 }

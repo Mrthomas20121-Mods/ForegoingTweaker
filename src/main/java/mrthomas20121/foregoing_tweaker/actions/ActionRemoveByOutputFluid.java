@@ -1,17 +1,16 @@
 package mrthomas20121.foregoing_tweaker.actions;
 
+import com.blamejared.crafttweaker.api.action.recipe.ActionRecipeBase;
 import com.blamejared.crafttweaker.api.fluid.IFluidStack;
-import com.blamejared.crafttweaker.api.managers.IRecipeManager;
-import com.blamejared.crafttweaker.impl.actions.recipes.ActionRecipeBase;
+import com.blamejared.crafttweaker.api.recipe.manager.base.IRecipeManager;
 import com.buuz135.industrial.recipe.DissolutionChamberRecipe;
-import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.Iterator;
 import java.util.Map;
 
-public class ActionRemoveByOutputFluid extends ActionRecipeBase {
+public class ActionRemoveByOutputFluid extends ActionRecipeBase<DissolutionChamberRecipe> {
 
     private final IFluidStack output;
 
@@ -22,9 +21,9 @@ public class ActionRemoveByOutputFluid extends ActionRecipeBase {
 
     @Override
     public void apply() {
-        Iterator<Map.Entry<ResourceLocation, IRecipe<?>>> iterator = getRecipes().entrySet().iterator();
+        Iterator<Map.Entry<ResourceLocation, DissolutionChamberRecipe>> iterator = getRecipes().entrySet().iterator();
         while(iterator.hasNext()) {
-            DissolutionChamberRecipe recipe = (DissolutionChamberRecipe) iterator.next().getValue();
+            DissolutionChamberRecipe recipe = iterator.next().getValue();
 
             if(recipe.outputFluid.isFluidEqual(output.getInternal())) {
                 iterator.remove();

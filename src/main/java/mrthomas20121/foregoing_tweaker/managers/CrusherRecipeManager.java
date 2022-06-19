@@ -1,19 +1,18 @@
 package mrthomas20121.foregoing_tweaker.managers;
 
 import com.blamejared.crafttweaker.api.CraftTweakerAPI;
-import com.blamejared.crafttweaker.api.annotations.ZenRegister;
-import com.blamejared.crafttweaker.api.item.IIngredient;
-import com.blamejared.crafttweaker.api.managers.IRecipeManager;
-import com.blamejared.crafttweaker.impl.actions.recipes.ActionAddRecipe;
-import com.blamejared.crafttweaker_annotations.annotations.Document;
+import com.blamejared.crafttweaker.api.action.recipe.ActionAddRecipe;
+import com.blamejared.crafttweaker.api.annotation.ZenRegister;
+import com.blamejared.crafttweaker.api.ingredient.IIngredient;
+import com.blamejared.crafttweaker.api.recipe.manager.base.IRecipeManager;
 import com.buuz135.industrial.recipe.CrusherRecipe;
-import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.crafting.RecipeType;
 import org.openzen.zencode.java.ZenCodeType;
 
 @ZenCodeType.Name("mods.foregoing_tweaker.LaserDrill.Crusher")
 @ZenRegister
-public class CrusherRecipeManager implements IRecipeManager {
+public class CrusherRecipeManager implements IRecipeManager<CrusherRecipe> {
 
     @ZenCodeType.Method
     public void addRecipe(String name, IIngredient output, IIngredient ingredient) {
@@ -23,7 +22,7 @@ public class CrusherRecipeManager implements IRecipeManager {
     }
 
     @Override
-    public IRecipeType<CrusherRecipe> getRecipeType() {
+    public RecipeType<CrusherRecipe> getRecipeType() {
         return CrusherRecipe.SERIALIZER.getRecipeType();
     }
 }
