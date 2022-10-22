@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/Mrthomas20121/ForegoingTweaker/issues"
 
 [[mods]]
 modId="foregoing_tweaker"
-version="1.18-1.1.5"
+version="1.19.2-1.1.5"
 displayName="Foregoing Tweaker"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/foregoing_tweaker"
 #logoFile="tinkers_reforged_logo.png"
@@ -14,12 +14,6 @@ description='''
 Add Crafttweaker support to Industrial Foregoing
 '''
 
-[[dependencies.foregoing_tweaker]]
-    modId="industrialforegoing"
-    mandatory=true
-    versionRange="[3.3,]"
-    ordering="NONE"
-    side="BOTH"
 [[dependencies.foregoing_tweaker]]
 	modId = "crafttweaker"
 	mandatory = true
