@@ -14,7 +14,7 @@ public class ActionRemoveByOutputFluid extends ActionRecipeBase<DissolutionChamb
 
     private final IFluidStack output;
 
-    public ActionRemoveByOutputFluid(IRecipeManager manager, IFluidStack output) {
+    public ActionRemoveByOutputFluid(IRecipeManager<DissolutionChamberRecipe> manager, IFluidStack output) {
         super(manager);
         this.output = output;
     }

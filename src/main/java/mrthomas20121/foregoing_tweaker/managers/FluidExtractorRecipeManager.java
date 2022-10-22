@@ -7,6 +7,8 @@ import com.blamejared.crafttweaker.api.fluid.IFluidStack;
 import com.blamejared.crafttweaker.api.ingredient.IIngredient;
 import com.blamejared.crafttweaker.api.item.IItemStack;
 import com.blamejared.crafttweaker.api.recipe.manager.base.IRecipeManager;
+import com.buuz135.industrial.module.ModuleCore;
+import com.buuz135.industrial.recipe.CrusherRecipe;
 import com.buuz135.industrial.recipe.FluidExtractorRecipe;
 import mrthomas20121.foregoing_tweaker.util.StackValue;
 import net.minecraft.resources.ResourceLocation;
@@ -38,6 +40,6 @@ public class FluidExtractorRecipeManager implements IRecipeManager<FluidExtracto
 
     @Override
     public RecipeType<FluidExtractorRecipe> getRecipeType() {
-        return FluidExtractorRecipe.SERIALIZER.getRecipeType();
+        return (RecipeType<FluidExtractorRecipe>) ModuleCore.FLUID_EXTRACTOR_TYPE.get();
     }
 }

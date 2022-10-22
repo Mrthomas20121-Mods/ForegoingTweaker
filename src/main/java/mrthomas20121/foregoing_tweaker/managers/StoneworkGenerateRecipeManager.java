@@ -6,6 +6,8 @@ import com.blamejared.crafttweaker.api.annotation.ZenRegister;
 import com.blamejared.crafttweaker.api.item.IItemStack;
 import com.blamejared.crafttweaker.api.recipe.manager.base.IRecipeManager;
 import com.blamejared.crafttweaker_annotations.annotations.Document;
+import com.buuz135.industrial.module.ModuleCore;
+import com.buuz135.industrial.recipe.CrusherRecipe;
 import com.buuz135.industrial.recipe.StoneWorkGenerateRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -19,17 +21,17 @@ public class StoneworkGenerateRecipeManager implements IRecipeManager<StoneWorkG
     @ZenCodeType.Method
     public void addRecipe(String name, IItemStack output, int waterNeed, int lavaNeed, int waterConsume, int lavaConsume) {
         StoneWorkGenerateRecipe recipe = new StoneWorkGenerateRecipe(new ResourceLocation("crafttweaker", name), output.getInternal(), waterNeed, lavaNeed, waterConsume, lavaConsume);
-        CraftTweakerAPI.apply(new ActionAddRecipe(this, recipe, ""));
+        CraftTweakerAPI.apply(new ActionAddRecipe<>(this, recipe, ""));
     }
 
     @ZenCodeType.Method
     public void addRecipe(String name, IItemStack output, int waterNeed, int lavaNeed) {
         StoneWorkGenerateRecipe recipe = new StoneWorkGenerateRecipe(new ResourceLocation("crafttweaker", name), output.getInternal(), waterNeed, lavaNeed, 0, 0);
-        CraftTweakerAPI.apply(new ActionAddRecipe(this, recipe, ""));
+        CraftTweakerAPI.apply(new ActionAddRecipe<>(this, recipe, ""));
     }
 
     @Override
     public RecipeType<StoneWorkGenerateRecipe> getRecipeType() {
-        return StoneWorkGenerateRecipe.SERIALIZER.getRecipeType();
+        return (RecipeType<StoneWorkGenerateRecipe>) ModuleCore.STONEWORK_GENERATE_TYPE.get();
     }
 }

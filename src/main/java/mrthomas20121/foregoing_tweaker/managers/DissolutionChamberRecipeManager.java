@@ -8,6 +8,8 @@ import com.blamejared.crafttweaker.api.fluid.MCFluidStack;
 import com.blamejared.crafttweaker.api.ingredient.IIngredient;
 import com.blamejared.crafttweaker.api.item.IItemStack;
 import com.blamejared.crafttweaker.api.recipe.manager.base.IRecipeManager;
+import com.buuz135.industrial.module.ModuleCore;
+import com.buuz135.industrial.recipe.CrusherRecipe;
 import com.buuz135.industrial.recipe.DissolutionChamberRecipe;
 import mrthomas20121.foregoing_tweaker.actions.ActionRemoveByOutputFluid;
 import mrthomas20121.foregoing_tweaker.util.IIngredientUtil;
@@ -51,6 +53,6 @@ public class DissolutionChamberRecipeManager implements IRecipeManager<Dissoluti
 
     @Override
     public RecipeType<DissolutionChamberRecipe> getRecipeType() {
-        return DissolutionChamberRecipe.SERIALIZER.getRecipeType();
+        return (RecipeType<DissolutionChamberRecipe>) ModuleCore.DISSOLUTION_TYPE.get();
     }
 }

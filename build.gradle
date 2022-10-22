@@ -24,7 +24,7 @@ archivesBaseName = 'foregoing_tweaker'
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: 'official', version: '1.18.2'
+    mappings channel: 'official', version: '1.19.2'
 
     runs {
         client {
@@ -99,28 +99,18 @@ repositories {
 }
 
 dependencies {
-    def ct = 'com.blamejared.crafttweaker:CraftTweaker-forge-1.18.2:9.1.86'
-    def mc = "net.minecraftforge:forge:1.18.2-40.1.0"
-	minecraft mc
+	minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-	implementation fg.deobf("curse.maven:industrial-foregoing-266515:3817385")
-    implementation fg.deobf('curse.maven:titanium-287342:3817355')
+	implementation fg.deobf("curse.maven:industrial-foregoing-266515:${if_version}")
+    implementation fg.deobf("curse.maven:titanium-287342:${titanium_version}")
 
-	implementation fg.deobf(ct)
-    compileOnly 'mezz.jei:jei-1.18.2:9.5.5.174:api'
-    runtimeOnly fg.deobf('mezz.jei:jei-1.18.2:9.5.5.174')
+	implementation fg.deobf("com.blamejared.crafttweaker:CraftTweaker-forge-${minecraft_version}:${ct_version}")
 	
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.18.2-66-SNAPSHOT:api")
-    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.18.2-66-SNAPSHOT")
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
 
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.6.3")
-    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.6.3:api")
-
-    annotationProcessor 'com.blamejared.crafttweaker:Crafttweaker_Annotation_Processors-1.18.2:2.0.0.86'
-    annotationProcessor 'com.google.code.gson:gson:2.8.6'
-    annotationProcessor 'org.reflections:reflections:0.9.10'
-    annotationProcessor mc
-    annotationProcessor ct
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${minecraft_version}-${curio_version}")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${minecraft_version}-${curio_version}:api")
 }
 
 jar {

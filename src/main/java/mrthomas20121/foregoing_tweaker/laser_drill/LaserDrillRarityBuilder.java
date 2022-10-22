@@ -6,11 +6,9 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraftforge.common.BiomeDictionary;
 import org.openzen.zencode.java.ZenCodeType;
 
 import java.util.Arrays;
-import java.util.Set;
 
 @ZenCodeType.Name("mods.foregoing_tweaker.laser_drill.LaserDrillRarityBuilder")
 @ZenRegister
@@ -39,32 +37,6 @@ public class LaserDrillRarityBuilder {
     @ZenCodeType.Method
     public LaserDrillRarityBuilder setWeight(int weight) {
         this.weight = weight;
-        return this;
-    }
-
-    @ZenCodeType.Method
-    public LaserDrillRarityBuilder addBiomeDictToWhitelist(String dictionary) {
-        Set<ResourceKey<Biome>> keys = BiomeDictionary.getBiomes(BiomeDictionary.Type.getType(dictionary));
-        int length = whitelist.length;
-        this.whitelist = Arrays.copyOf(this.whitelist, keys.size()+length);
-        int i = length;
-        for(ResourceKey<Biome> key : keys) {
-            whitelist[i] = key;
-            i++;
-        }
-        return this;
-    }
-
-    @ZenCodeType.Method
-    public LaserDrillRarityBuilder addBiomeDictToBlacklist(String dictionary) {
-        Set<ResourceKey<Biome>> keys = BiomeDictionary.getBiomes(BiomeDictionary.Type.getType(dictionary));
-        int length = blacklist.length;
-        this.blacklist = Arrays.copyOf(this.blacklist, keys.size()+length);
-        int i = length;
-        for(ResourceKey<Biome> key : keys) {
-            blacklist[i] = key;
-            i++;
-        }
         return this;
     }
 
